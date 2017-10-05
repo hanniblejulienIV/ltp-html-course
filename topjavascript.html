@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+    <h2>Introduction</h2>
+    
+    <p>Javascript libraries allow us to add new features to our applications and prevent us from having to duplicate code that other people have already created. Some of the most useful Javascript libraries have been around for many years, but I’m going to avoid covering those. Instead, we’ll be covering some of the Javascript libraries that are new and trending. These libraries include Chart.js, LeafletJS, Three.js, Lodash, and CreateJS. This is not a complete list of all of the Javascript libraries worth learning. Entire books could be written on each one of these Javascript libraries. This article will only scratch the surface of each of them. These are some of my own personal favorite libraries. After giving you a brief introduction, you’ll be able to determine whether they are worth further exploring to satisfy your individual needs/goals as a programmer.</p>
+    
+    
+    <h3>Differences between Javascript libraries and Javascript frameworks</h3>
+    
+    <p>library and a framework. It’s common for people to confuse these two concepts (some people even believe that libraries and frameworks are the same thing). The explanations of the difference is often confusing. Furthermore, it’s possible for something to be just a library, just a framework, or both. This makes the issue even more confusing.</p>
+    
+    <p>A Javascript library consists of source code which contains functions and objects. By including the Javascript library in your application, you can use these functions and/or objects without having to create them from scratch on your own. It’s a way for us to avoid “re-inventing the wheel” by allowing us to take advantage of useful code that has already been written by other programmers. </p>
+    
+    <p>On the other hand, a Javascript framework will usually affect the general structure of your application. Frameworks usually always contain one or more libraries. One main difference between them is that you may use a library in any way that suits you, while a framework usually specifies some guidelines regarding how it should be used. A framework will often have rules that your code (and the general structure of it) must abide by to “work within the framework” of it. Although I won’t be explaining “Inversion of Control” (IoC), it’s a concept that is crucial to completely understanding the difference. It’s beyond the scope of this article, and further research upon this subject is required to thoroughly understand the difference between frameworks and libraries. To make a long story short, when you use a library, your code makes calls to various functions or objects within the library. However, when using a framework, the framework makes calls to your code (this is often referred to as “don’t call us, we’ll call you”).</p>
+    
+    <p>The idea of a framework is a bit more difficult to grasp than the idea of a library. Therefore, if the idea of a framework doesn’t make sense to you, don’t worry about it too much for now. I simply want to make it clear that there is a difference, even though the terms are often used interchangeably. I’m aware that this brief discussion may have opened up a can of worms within your mind, but this type of mental discomfort often plants the seeds of profound realizations. With that being said, let’s move on and begin playing with Javascript libraries</p>
+    
+    
+    <h2>Chart.js</h2>
+    
+    <p>DOWNLOAD: https://github.com/chartjs/Chart.js/releases/tag/v2.3.0</p>
+    
+    <p>As its name implies, Chart.js is a Javascript library for creating charts. Although we’re only going to be creating very simple charts, there are many advanced features that Chart.js has to offer. Not only do you have many different choices for the type of chart to make (there are currently eight different types), it is also possible for you to animate the charts. It’s easy to get the hang of using this library, and it can be adapted to a wide range of charting needs.</p>
+    
+    <p>Let’s install Chart.js so that we can get our example application up and running. There are several different ways of installing Chart.js. However, in our case we’ll be downloading it directly from GitHub. The version used in our examples in version 2.3.0. The example code may need slight modifications to work properly with future releases. You can download Chart.js version 2.3.0 at the above URL.</p>
+    
+    <p>In Figure 2-1, I have outlined in red the particular file that we will be using. If you would prefer a lighter version of the library, you can install Chart.min.js, but it doesn’t contain as many features as the standard Chart.js. Right click on Chart.js (outlined in red in Figure 2-1), and then save it to the same directory that you’ll use to create our Chart.js examples. You could save it to a different directory, but then you’ll need to specify the full path to the file (feel free to do this if you know what you’re doing – otherwise, just follow along and you’ll be fine).</p>
+    
+    <p>Figure 2-1: Downloading Chart.js picture goes here</p>
+    
+    <p>In a full tutorial on Chart.js, I would go into greater detail on how each of our applications work. However, since I’m covering several different Javascript libraries in this article, I need to keep the tutorials relatively brief. We’ll first create a simple line chart, and then a simple pie chart. Let’s get started by creating a file named linechart.html and adding the following code to it:</p>
+    
+    
+    
+    
+   
+    
+    
+    
+   <pre class="lang:default decode:true "> <!DOCTYPE html> 
+<html lang=”en”> 
+<head> 
+<meta charset=”utf-8” /> 
+<title>Chart.js Line Chart</title> 
+<script src=’Chart.js’></script> 
+</head> 
+<body> 
+<canvas id=”sales” width=”600” height=”400”></canvas> 
+<script> 
+// The data for our line chart 
+var salesData = { 
+labels : [“January”,”February”,”March”,”April”,”M ay”,”June”, “July”, “August”, “September”, “October”, “November”, “December”], 
+datasets : [ 
+{ 
+label: “Coscina Coffee Sales - Year 2015”, 
+backgroundColor : “#DD2222”, 
+pointBackgroundColor: “#000000”, 
+data : [1230, 870, 1510, 432, 500, 672, 800, 700, 1000, 1452, 2000, 1890] 
+} 
+]}; 
+// Create a reference to our canvas 
+var sales = document.getElementById(‘sales’). getContext(‘2d’); 
+// Create the line chart 
+var salesChart = new Chart(sales, { 
+type: ‘line’, 
+data: salesData 
+}); 
+</script> 
+</body> 
+</html></pre>
+
+  
+    
+    <p>Code Listing 2-1: Linechart.html</p>
+    
+    
+    <p>When you run this code in a web browser, it should display the chart shown in Figure 2-2:</p>
+    
+    <p>Figure 2-2: Coscina Coffee Sales Line Chart picture goes here</p>
+    
+    <p>As you may be able to gather by looking at the chart, this line graph displays the volume of sales for each month. These sales could represent total orders, total units, or total revenue (each of which are all totally different things) – but the line graph will work the same way regardless of which type of data that you render. Now that we’ve seen Chart.js in action, let’s take a look at the relevant code.</p>
+    
+    
+    <p>First, we imported the Chart.js library in the head of our document:</p>
+    
+    <pre><script src=’Chart.js’></script></pre>
+    
+    <p>The next relevant line of code to our graph is the HTML canvas element. Canvas elements are used in HTML to display graphics. Each particular Chart.js chart/graph corresponds to a canvas element within the HTML of the document (meaning that we could put multiple charts on a single page by using multiple canvas elements). In this example, we display our line graph in a canvas element named sales:</p>
+    
+    
+    <pre class="lang:default decode:true "><canvas id=”sales” width=”600” height=”400”></canvas></pre>
+    
+    <p>Finally, let’s get into the Javascript which really makes everything work. Please notice that the script for our chart is placed after the canvas element. If the script was placed before the canvas element, we could experience problems rendering our chart, if the script is run too early. Before we can render any sort of chart, we also need data to render. All of the data for our chart (which is in JSON format) is stored in a Javascript object named salesData:</p>
+    
+    
+    
+    <pre class="lang:default decode:true ">var salesData = { 
+labels : [“January”,”February”,”March”,”April”, ”May”,”June”, “July”, “August”, “September”, “October”, “November”, “December”], 
+datasets : [ 
+{ 
+label: “Coscina Coffee Sales - Year 2015”, 
+backgroundColor : “#DD2222”, 
+pointBackgroundColor: “#000000”, 
+data : [1230, 870, 1510, 432, 500, 672, 800, 700, 1000, 1452, 2000, 1890] 
+} 
+]};
+</pre>
+    
+    
+    <p>Let’s take a look at our JSON data structure. The labels field contains labels for the x-axis of our graph, which in this case are month names. Next, we specify our data sets, although we only have one data set in this particular graph. However, we could have several data sets which would put multiple lines on the same chart. For example, we could use multiple data sets to display sales from multiple different employees that work in sales (to compare the success of each employee). We could also display revenue obtained from our key clients or channels, and compare the sizes of each revenue stream. For the purpose of keeping this example simple, I only used one data set. </p>
+    
+    <p>The label field of our data set is used to give a description of what that particular line represents within the chart. The backgroundColor property sets the background color (which you don’t need to add, in which case it will just be a thin line rather than filled with color down to the bottom of the graph). The pointBackgroundColor sets the color of each point on the graph. The last field in our data set, “data”, provides values for each of the months that we specified for our labels (which is why there are 12 different values). </p>
+    
+    <p>We also create a reference to our canvas element (the element with the id “sales”). We technically don’t need a separate reference to do this, but it makes the line of code that actually creates the chart much easier to read.</p>
+    
+    
+    <pre>var sales = document.getElementById(‘sales’).getContext(‘2d’);</pre>
+    
+    <p>The only thing that is now left to do is to render the line graph. We accomplish this by using the following code:</p>
+    
+ <pre class="lang:default decode:true ">var salesChart = new Chart(sales, { 
+type: ‘line’, 
+data: salesData 
+});
+</pre>
+    
+    
+    <p>We keep a reference to the chart (salesChart), so that we can easily make further modifications to the chart in other parts of our code. However, in this case, we could have simply created the new Chart (without storing it into a variable), since we aren’t making any future changes to it, or referring back to it anywhere else. The first argument to the Chart constructor is the canvas element that we are using for the chart (which we had stored in “sales” in the previous line of code). Instead, we could’ve written:</p>
+    
+    <pre class="lang:default decode:true ">var salesChart = new Chart(document.getElementById(‘sales’). getContext(‘2d’), { 
+type: ‘line’, 
+data: salesData 
+});
+</pre>
+    
+    
+    <p>I hope that you agree that creating a reference to the canvas context, and then using that reference in the constructor is much cleaner. The second argument to the Chart constructor provided the type of graph (in this case, it’s a line graph) and also the JSON data that we’ll use to populate the graph. We could have put the entire JSON data structure (the one that we stored in salesData) into the constructor as opposed to simply passing a reference, but using references helps make our code much cleaner and organized. In addition to type and data, we can also specify different options for our chart. We’re only scratching the surface, so I won’t be getting into all of that – please read the Chart.js documentation if you wish to learn more about the different options that may be set. </p>
+    
+    <p>I created another example of a pie chart which is quite similar to our first example. Since the way the code works is almost exactly the same, I won’t explain it, since I would mostly repeat what I’ve already written. The main difference is that the line chart was used to show sales for each month of a year, whereas this pie chart is used to show causes of deaths (pie charts are great for comparing different sources or aspects of a particular thing). The main idea is to show the wide range of possibilities offered by Chart.js. The code for the example is shown in Code Listing 2-2, and it should be rendered similar to Figure 2-3.</p>
+    
+    
+    
+    <pre class="lang:default decode:true "><!DOCTYPE html> 
+<html lang=”en”> 
+<head> 
+<meta charset=”utf-8” /> 
+<title>Chart.js Pie Chart</title> 
+<script src=’Chart.js’></script> 
+</head> 
+<body> 
+<canvas id=”deaths” width=”600” height=”400”></canvas> 
+<script> 
+// The data for our pie chart 
+var deathsData = { 
+labels: [ 
+“Homicide”, 
+“Drug Overdose”, 
+“Natural Causes”, 
+“Car Accidents”, 
+“Other”
+], 
+datasets: [ 
+{ 
+data: [25, 150, 100, 80, 200], 
+backgroundColor: [ 
+“#FF6384”, 
+“#36A2EB”, 
+“#FFCE56”, 
+“#22DD22”, 
+“#444444” 
+], 
+hoverBackgroundColor: [ 
+“#FF93A4”, 
+“#56C2FB”, 
+“#FFEE76”, 
+“#42FD42”, 
+“#666666” 
+] 
+}] 
+}; 
+// Create a reference to our canvas 
+var deaths = document.getElementById(‘deaths’). getContext(‘2d’); 
+// Create the pie chart 
+var myPieChart = new Chart(deaths, { 
+type: ‘pie’, 
+data: deathsData 
+}); 
+</script> 
+</body> 
+</html>
+</pre>
+    
+<p>Code Listing 2-2: Piechart.html</p>    
+
+    
+<p>Figure 2-1: Downloading Chart.js picture goes here</p>    
+    
+    
+ <h2>LeafletJS</h2>   
+   <p>DOWNLOAD: http://leafletjs.com/download.html</p> 
+    
+    <p>LeafletJS is a mapping library that allows us to add interactive maps to our web applications. Unlike some of the other popular mapping libraries, LeafletJS is open source, which gives us all of the benefits that come with open source software. LeafletJS also allows you to work with the mapping provider that you prefer (such as Google Maps or OpenStreetMap). LeafletJS is also very mobile friendly.</p>
+    
+    
+    <p>Let’s get started by creating a page that displays a simple LeafletJS map. Create an HTML file titled HelloLeaflet. html and add the code shown in Code Listing 3-1. The version of LeafletJS we’re using is version 1.0.1 (as shown in Figure 3-1). However, the map should still work fine in future versions of Leaflet. You should open Leaflet 1.0.1 (or whatever the current stable version is), and then unzip the files into the directory you will be using for our example page.</p>
+    
+    
+    <p>Figure 3-1 picture goes here</p>
+    
+    
+   <p>Let’s get started by creating a page that displays a simple LeafletJS map. Create an HTML file titled HelloLeaflet. html and add the code shown in Code Listing 3-1.</p> 
+    
+    <pre class="lang:default decode:true "><html> 
+<head> 
+<title>Hello LeafletJS!</title> 
+<link rel=”stylesheet” href=”leaflet.css” /> 
+<script src=”leaflet.js”></script> 
+</head> 
+<body> 
+<div id=”mapDiv” style=”height:300px”></div> 
+<script> 
+var firstMap = L.map(‘mapDiv’).setView([38.741, 16.538], 16); 
+L.tileLayer(‘http://{s}.tile.osm.org/{z}/{x}/{y}.png’, { 
+attribution: ‘Hello LeafletJS!’, 
+maxZoom: 16, 
+noWrap: true}).addTo(firstMap); 
+</script> 
+</body> 
+</html>
+</pre>
+    
+    <p>Code Listing 3-1: HelloLeaflet.html</p>
+    
+    
+    
+    <p>Within the head of our document, we import the leaflet.js and leaflet.css files. In the body, our only HTML element is a div named “mapDiv” that will contain our map. The height of our div is a key factor. This determines how big our map will be. Without setting the height, the map won’t display – so don’t forget to do this. The Javascript code that immediately follows our div element uses the Leaflet library to create and render our map within the div. Let’s examine each of these two lines of code separately:</p>
+    
+    
+    <pre class="lang:default decode:true ">var firstMap = L.map(‘mapDiv’).setView([38.741, 16.538], 16);</pre>
+    
+    <p>The L.map function (hint: we use L to reference the Leaflet library) creates a map in the div named mapDiv. We then store that map in a map object that we name firstMap. The argument to the map function is the id of the div (mapDiv) that we want the map to be placed in. We call the setView function upon this map – the first argument represents the latitude/longitude coordinates that we want to focus on, and the second argument represents the zoom level (in this case, 16). We could have called the setView function in a separate line of code, but I feel that it’s more concise to call it in the same line of code that we use to create the map. Let’s take a look at the next Javascript statement:</p>
+    
+    
+    <pre class="lang:default decode:true ">L.tileLayer(‘http://{s}.tile.osm.org/{z}/{x}/{y}.png’, { 
+attribution: ‘Hello LeafletJS!’, 
+maxZoom: 16, 
+noWrap: true}).addTo(firstMap);
+</pre>
+    
+    <p>The L.tileLayer function is used to load and display the tile layer. The tile layer is the layer of your map that displays the map tiles. The map tiles are the images that make up the map. Which specific tiles you’re viewing, depends on your zoom level and the location of your view. The first argument to the tile layer function specifies the URL of the map source which provides the imagery for the map. In this case, we’re using a URL for an OpenStreetMap, but you could replace this with URLs for maps from other mapping providers. The second argument to the tileLayer function is used to set one or more options for our tile layer. In this example, we set three different options:</p>
+    
+    
+    <ul>
+        <li>attribution – a string of text displayed in the bottom right corner </li>
+        <li>maxZoom – how far you can zoom in </li>
+        <li>noWrap – whether the map will keep repeating itself if there is enough space to view more than the whole world (based on the zoom level)</li>
+        <li>That’s all there is to it! When rendered in a browser, the map should look similar to Figure 3-2.</li>
+    </ul>
+    
+    
+    <p>Figure 3-2 picture goes here</p>
+    
+    <p>Take a look at the page and try experimenting with different options. To view more documentation on the Leaflet API, please visit http://leafletjs.com/reference.html</p>
+    
+    
+    
+    
+    <h2>Three.JS</h2>
+    <P>DOWNLOAD: http://threejs.org/build/three.js</P>
+    
+    
+    
+    <P>Three.JS is a Javascript library for creating and rendering 3D animated graphics within a browser. There is an extreme level of depth to Three.JS. If you find it interesting, you should keep playing with it. I have seen some amazing applications using Three.JS. However, most of them are too intricate to be discussed in this article. We’ll use a very simple example that involves a 3D cone rotating around both the x and y axis. </P>
+    
+    
+    <P>To install Three.js, save the above file to the directory that you will be using for our example.<br> If that URL no longer works, a simple Google search should provide basic instructions on how to obtain the Three.js library. Next, create a file named HelloThreeJS.html and add the code shown in Code Listing 4-1.</P>
+    
+    <pre class="lang:default decode:true "><!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Hello Three.JS!</title>
+</head>
+<body>
+<script src=”three.js”></script>
+<script>
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75, window.
+innerWidth / window.innerHeight, 1, 100);
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+var geometry = new THREE.ConeGeometry(2, 3, 20);
+var material = new THREE.MeshBasicMaterial({color:
+0xddab33});
+var cone = new THREE.Mesh(geometry, material);
+scene.add(cone);
+camera.position.z = 7;
+var render = function() {
+requestAnimationFrame(render);
+cone.rotation.x += 0.01;
+cone.rotation.y += 0.05;
+renderer.render(scene, camera);
+}
+render();
+</script>
+</body>
+</html>
+</pre>
+    
+    <p>Code Listing 4-1: HelloThreeJS.html</p>
+    
+    <p>When you view the file in a browser, you should see an animated (rotating) 3D cube, as shown in Figure 4-1.</p>
+    
+    <p>Figure 4-1 picture goes here</p>
+    
+    
+    <p>The three primary components within a Three.JS animation is a scene, camera and renderer. The scene is what’s actually happening (in terms of the graphics/animation). The camera is a particular perspective on the scene, as you can view the same scene from different perspectives. The renderer simply renders a particular scene based on the camera that is being used. Now that we have a basic understanding of the big picture, let’s examine the code used to generate the rotating cone line-by-line. First, we need to create a Scene object, which will be used for the animation:</p>
+    
+    <pre class="lang:default decode:true ">var scene = new THREE.Scene();</pre>
+    
+    
+    <p>We create a reference to this object (scene), so that we may use it later on. We’ll eventually need to add our cone to the scene, and we will also need to pass the scene as an argument to the renderer. The next line of code creates our camera:</p>
+    
+    
+<pre class="lang:default decode:true ">var camera = new THREE.PerspectiveCamera(75, window.innerWidth / 
+window.innerHeight, 1, 100);
+</pre>
+    
+    <p>There are different types of cameras that we may use. However, in this case we’re using a perspective camera. The various parameters of the PerspectiveCamera constructor are (in order): the field of view (in degrees), aspect ratio, near plane and far plane. The aspect ratio should almost always be window.innerWidth / window.innerHeight for everything to render properly. The near and far plane determine whether an object should be rendered based on how near/far it is to the camera (things too close or too far won’t be rendered). You can play with the values of the arguments passed to the constructor to see how it influences what gets rendered.</p>
+    
+    
+    <p>Our next few lines of code are related to the renderer:</p>
+    
+    
+    <pre class="lang:default decode:true ">var renderer = new THREE.WebGLRenderer(); 
+renderer.setSize(window.innerWidth, window.innerHeight); 
+document.body.appendChild(renderer.domElement);
+</pre>
+    
+    
+    <p>The first line creates a WebGLRenderer object and stores a reference (named renderer) to this object. The next line sets the size of the renderer to the inner width and height of the window. The third line adds the renderer to our HTML document. Although we don’t have any canvas tags within the body of our document, the renderer is actually using an HTML canvas to render everything (this is done discreetly). Now that we have the scene, camera and renderer created, let’s go ahead and create our cone:</p>
+    
+    
+    <pre class="lang:default decode:true ">var geometry = new THREE.ConeGeometry(2, 3, 20); 
+var material = new THREE.MeshBasicMaterial({color: 0xddab33}); 
+var cone = new THREE.Mesh(geometry, material); 
+scene.add(cone);
+</pre>
+    
+    
+    
+    <p>The first line of code is used to create the geometric properties of our cone. The parameters to the ConeGeometry constructor are (in order): radius, height, and segments. There are far more potential parameters than these three. However, they are the first three (the other parameters simply use default values if you don’t specify a value for them). The radius and height of the cone should be fairly straightforward to understand, although the segments might sound a bit more confusing. I’ll explain it by example – if the number of segments in our cone was 8, then the base of the cone would be shaped like an octagon. If you know a little bit about geometry, then you realize that there is no such thing as a perfect circle in the physical realm (nobody has even been able to manifest one within the digital realm). Therefore, we can’t create a cone that uses a perfect circle as its base. However, using more segments makes it look closer to a perfect circle. </p>
+    
+    
+    
+    <p>After we create the ConeGeometry object, we create a material for the mesh of our cone. We provide the color for the mesh, which is light orange (the RGB value #ddab33). We prefix the RGB value with 0x, which is a signifier for hexadecimal values in the programming world. If you don’t know what hexadecimal means, I highly recommend performing a Google search to learn more about it (binary, octal, decimal, and hexadecimal number systems are all valuable things to know in the world of programming). On the third line of code, we create a Mesh object (named cone). Mesh objects are created by applying a mesh material to a specified geometry object. Finally, the last line of code adds the cone to our scene.</p>
+    
+    
+    <p>Next, we set the z position of the camera to seven:</p>
+    
+    <pre class="lang:default decode:true ">camera.position.z = 7;</pre>
+    
+    <p>Before we leave Three.JS, let’s take a look at how we render everything:</p>
+    
+    
+    <pre class="lang:default decode:true ">var render = function() {
+requestAnimationFrame(render);
+cone.rotation.x += 0.01;
+cone.rotation.y += 0.05;
+renderer.render(scene, camera);
+}
+render();
+</pre>
+    
+    
+    
+    <p>requestAnimationFrame updates the frame of a renderer sixty times per second. The cone.rotation.x and cone. rotation.y values specify the rotation of the cube. These values will be changed by 0.01 and 0.05 sixty times per second. Increasing/decreasing these values will affect the speed at which the cone rotates. The render method of the renderer object takes the scene and camera as an argument and repaints the canvas for each frame. </p>
+    
+    
+    <p>Although you may be impressed by this simple example, I highly suggest that you look at demonstrations of more advanced applications that use Three.JS. Some of the 3D animations I have seen that use Three.JS are truly mind blowing.</p>
+    
+    
+    <h1>Lodash</h1>
+    <p>DOWNLOAD: https://cdnjs.com/libraries/lodash.js</p>
+    
+    <p>Lodash is a Javascript library of utility functions that helps us avoid writing our own custom functions for common programming tasks. Lodash is actually based upon another Javascript library named underscore.js (which was developed in 2009). The original developers of underscore.js have instead shifted their energy into further developing Lodash. I personally believe that Lodash actually gets its name from underscore.js, since an underscore ( _ ) looks like a dash (-). However, it is lower than a regular dash – hence a “low dash”. This is merely speculation and I could be wrong. When calling Lodash functions, we reference the Lodash library with the underscore character ( similar to how we reference the Leaflet library with the L character). </p>
+    
+    
+    <p>A utility function allows us to put code that often gets re-used into a single function. This prevents us from duplicating code, avoids sloppiness, and encourages organization. The utility functions within Lodash apply to arrays, collections, loops, numbers, strings, and objects. In other words, Lodash is practical for an extremely wide range of different programming situations. </p>
+    
+    <p>In this example, we’re actually going to load the Lodash library into our application by using a CDN (Content Delivery Network). In all of the examples for the other libraries, we downloaded the library to our hard drive. We could also do this for Lodash, but I felt it would be worth showing an alternative way of doing things. To get started, visit the URL above. </p>
+    
+    <p>The src attribute of our script tag will point to the URL for the current version of Lodash (the current version is now 4.16.4). This URL is outlined in red in Figure 5-1. Create a file named HelloLodash.html, and then copy/paste the code from Code Listing 5-1 into it. It contains all of the code that we’ll be using to display a few utility functions within Lodash that work with arrays.</p>
+    
+    
+    <p>Figure 5-1 picture goes here</p>
+    
+    <p>Create a file named HelloLodash.html, and then copy/paste the code from Code Listing 5-1 into it. It contains all of the code that we’ll be using to display a few utility functions within Lodash that work with arrays.</p>
+    
+    <pre class="lang:default decode:true "><!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset=utf-8> 
+<title>Hello Lodash!</title> 
+<script src=”https://cdnjs.cloudflare.com/ajax/libs/lodash. js/4.16.4/lodash.js”></script>
+
+</head> 
+<body> 
+<div id=”output”></div> 
+<script> 
+var output = document.getElementById(“output”); 
+var ages = [22, 12, 16, 18, 19, 10, 81, 32, 17]; 
+output.innerHTML = “Original Ages: “; 
+_.forEach(ages, function(value) { 
+output.innerHTML += value + “ “; 
+}); 
+output.innerHTML += “<br /><br />Reversed Ages: “; 
+ages = _.reverse(ages); 
+_.forEach(ages, function(value) { 
+output.innerHTML += value + “ “; 
+}); 
+output.innerHTML += “<br /><br />Sorted Ages: “; 
+ages = _.sortBy(ages); 
+_.forEach(ages, function(value) { 
+output.innerHTML += value + “ “; 
+}); 
+</script> 
+</body> 
+</html>
+</pre>
+    
+    
+    <p>Code Listing 5-1: HelloLodash.html</p>
+    
+    <p>When you view this page in a browser, you should receive the same output displayed in Figure 5-2.</p>
+    
+    
+    <p>Figure 5-2 picture goes here</p>
+    
+    <p>This program is simple, but it shows off how Lodash makes it very easy to perform common programming tasks. First, we create an array and use the Lodash forEach utility function to iterate through each of the elements (displaying each element in our HTML div that we named output):</p>
+    
+    
+    <pre class="lang:default decode:true " >var ages = [22, 12, 16, 18, 19, 10, 81, 32, 17]; 
+output.innerHTML = “Original Ages: “; 
+_.forEach(ages, function(value) { 
+output.innerHTML += value + “ “; 
+});
+</pre>
+    
+    <p>A “for-each” loop is native to many languages, but it isn’t a native part of the Javascript language. In a nutshell, Lodash makes Javascript much more powerful and useful. We then reverse the order of the values within the array by using the Lodash reverse function. We then display the values again by iterating through the array with the forEach utility function:</p>
+    
+    
+    <pre class="lang:default decode:true ">output.innerHTML += “<br /><br />Reversed Ages: “; 
+ages = _.reverse(ages); 
+_.forEach(ages, function(value) { 
+output.innerHTML += value + “ “; 
+});
+</pre>
+    
+    
+    
+    
+    <p>It would be relatively easy to write a function that starts at the maximum index of an array, and then proceeds to iterate through the array until we reach index 0. With each iteration, we could add each value to a new array (which would be the same size as the original), and then return that new array (the Lodash reverse function probably works similar to this under the hood). However, it’s even easier to just call the reverse function on the array as opposed to writing our own utility function. It serves as a good exercise to learn how functions like this actually work. However, it would be a waste of time to keep writing functions like this. As I’ve matured as a developer, I’ve realized that even copy/pasting code can be a waste of time (as opposed to using libraries).It isn’t fun to update the same function in twenty different source code files each time you decide you want to change how that function works. </p>
+    
+    <p>Finally, we call the sortBy function on our array of ages. The sortBy function sorts the ages from smallest to largest, and then outputs them to our output div within each iteration of the forEach loop:</p>
+    
+    <pre class="lang:default decode:true ">output.innerHTML += “<br /><br />Sorted Ages: “; 
+ages = _.sortBy(ages); 
+_.forEach(ages, function(value) { 
+output.innerHTML += value + “ “; 
+});
+</pre>
+    
+    <p>We’ve only covered a few simple utility functions within Lodash that work with arrays. However, there are many other Lodash functions that are used specifically for working with arrays. There are also Lodash utility functions for working with all kinds of things besides arrays or collections. An entire book or course could be written to teach any of the libraries that we’ve examined in this article. I encourage you to read the Lodash documentation at https:// lodash.com/docs/ to discover some of the other great things that Lodash has to offer. The other libraries covered in this article will generally only apply to a certain niche of programmers, although Lodash may benefit just about anyone who writes Javascript code.</p>
+    
+    
+    <h2>CreateJS</h2>
+    
+    <p>CreateJS is an entire suite of multiple Javascript libraries and tools. It allows us to easily integrate graphics, animation, sound, and interactivity via the HTML canvas element. It consists of four primary libraries:</p>
+    
+    <p>EaselJS is primarily used for creating and rendering graphics, text, and animations via the HTML5 canvas element (which we saw earlier in our index.html). For more information on EaselJS, check out the official documentation at: http://www.createjs.com/docs/easeljs/modules/EaselJS.html</p>
+    
+    <p>TweenJS is designed for tweening animation. I’m sure you may be confused by the word tweening (as I certainly was). Tweening is defined as generating the values between two points. For example, the points between (1, 2) and (4, 5) is (2,3) and (3, 4), if following a straight line (but keep in mind that not all lines/trajectories are necessarily straight). TweenJS has great synergy with EaselJS, since it can add neat features to your animations. For more information on TweenJS, check out the official documentation at: http://www.createjs.com/docs/tweenjs/modules/TweenJS.html</p>
+    
+    
+    <p>SoundJS is an API for working with sound. It’s used to create sounds, play/pause/stop sounds, change the volume of sounds, load sounds, and even install plugins. For more information on SoundJS, check out the official documentation at: http://www.createjs.com/docs/soundjs/modules/SoundJS.html</p>
+    
+    <p>PreloadJS is used for preloading our assets. Preloading refers to the initial loading that takes place before the rest of our application executes. For more information on PreloadJS, check out the official documentation at: http://www.createjs.com/docs/preloadjs/modules/PreloadJS.html</p>
+    
+    <p>Since CreateJS is so huge, I decided not to provide examples of every library in an effort to keep this article from becoming too large and intimidating. However, CreateJS is an outstanding suite of Javscript libraries. I, therefore, felt that I would be doing this article an injustice if I didn’t at least make mention of it. There are numerous tutorials on the web which may help you get started with CreateJS. I also teach how to develop an application using CreateJS in the book that I wrote with Mark Lassoff: “App Development Guide: Wack-A Mole” (which is available on Amazon. com). I can absolutely guarantee that CreateJS will make your applications much more fun, interesting, and interactive. If you’re interested in using Javascript to create games, do yourself a favor, and check it out!</p>
+    
+    
+    <p>That’s all for now. Stay tuned for the article on the best trending Javascript libraries for year 2018!</p>
+    
+    
+
+</body>
+</html>

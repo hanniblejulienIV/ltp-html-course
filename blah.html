@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    
+    <p>by Tim Hwang</p>
+    
+    <p>The Python programming language is often recommended as a good language for beginners learning to program. Python code is accessible and reads like English, and the syntax lacks the various arcane sigils and glyphs other languages are littered with, such as curly braces and semicolons, that can catch beginners off guard. Furthermore, the language itself handles many low-level details such as types and memory management. While these topics are undoubtably important, they can easily overwhelm novice programmers. With Python, beginners can focus on learning to use code to solve problems.</p>
+    
+    <p>This article is meant to be accessible to even the most novice programmer; as such, I have provided screenshots and code snippets to aid readers in following along. However, it is EXTREMELY IMPORTANT that you do not simply read this article! Instead, manually TYPE OUT all the examples in your developer environment as you read. The vast amount of syntax that one needs to be familiar with can be daunting to beginners. Repetition and reinforcement learning are some of the best ways to gain familiarity with syntax.</p>
+    
+    <h2>IN THIS ARTICLE, YOU WILL:</h2>
+    
+    <ul>
+        <li>Familiarize yourself with a cloud-based Python developer environment</li>
+        <li>Learn to print strings and do basic math with Python Learn about variables and expressions</li>
+        <li>Encounter (and debug) errors</li>
+        <li>Learn how to write functions</li>
+    </ul>
+    
+    <p>One last note before we begin. First, while this article is specifically a Python coding primer, I encourage you to view this article as a “coding primer using Python” instead. If you’ve ever learned a second language, you know that just achieving a baseline level of competence is incredibly challenging. However, unlike human languages, most programming languages are based on the same common, language-agnostic principles.</p>
+    
+    <h2>Getting Started</h2>
+    
+    <p>There are a variety of ways to get started writing Python code, including through the command line via the python command, or through an IDE (Integrated Developer Environment) such as IDLE. However, as both of these options can involve installing something, for this tutorial I will go with a more straightforwards approach: running Python on the cloud.</p>
+    
+    <p>If this sounds intimidating to you, it’s not! “Cloud” is just a fancier sounding term technologists came up with that sounds more appealing than “other people’s computers.” Using the cloud simply means “making your data accessible on the Internet, accessing it remotely with someone else’s computer, and using the data there.”</p>
+    
+    <p>The advantage of using this sort of setup is consistency: I may have, for example, followed different installation steps for Python, or may have a different version of Python installed altogether, or I may have other software on my system that interact with how Python runs. Readers following along may thus run into strange errors that I never did (otherwise known as the “but it works on my machine!” syndrome). By running these tutorials on the cloud, we can guarantee that our programming environments are identical, and that what works for me will certainly work for readers.</p>
+    
+    <p>The cloud service we will be using for this article is repl.it. If you are unfamiliar with the term, REPL stands for Read Evaluate Print Loop. A REPL is a program that takes in user input, immediately evaluates it, outputs it to the screen, and waits for the next user input. Generally, REPLs are suited for tasks like quick sanity checks on what exactly a function does. REPLs are not suitable for writing large programs, as they evaluate every line as it is entered, meaning that complex, multi-line functions are not easy to input. However, REPLs can also import scripts you’ve written, enabling you to write a script in a text file, then load it into the REPL to interact with.</p>
+    
+    <p>(For those of you more experienced with Python, feel free to follow along in your choice of tool, be it a text editor, an IDE, or a REPL.)</p>
+    
+    <p>First, navigate to https://repl.it/languages/python. You should see something like this:</p>
+    
+    <p>pic1 goes here</p>
+    
+    <p>Here, the left side of the screen represents a text file you can use for longer scripts, and the right side is the REPL proper. For this tutorial, we will only use the REPL on the right side. Let’s get started!</p>
+    
+    <h2>Simple Math</h2>
+    
+    <p>The “evaluate” in read-evaluate-print-loop means that the REPL is capable of processing not just values, but also expressions. Simply put, expressions are statements that can be processed into a value. Most simple math problems are expressions, where your goal is to evaluate the expression: for example, when given the math problem 2 * 3 + 4 = ?, your task is to find the value (represented by ?) that the expression (represented by 2 * 3 + 4) represents to.</p>
+    
+    <p>Try inputting 2 * 3 + 4 into the REPL. Note that the REPL immediately returns the value 10; in other words, it has evaluated the expression you inputted and outputted the resultant value. The first line, beginning with >, shows your input, and the following line, beginning with => (fat arrow), shows the evaluated output.</p>
+    
+    <p>The REPL can also evaluate comparisons. Try inputting 2 * 3 + 4 == 10 in the REPL. The REPL returns True -- 2 * 3 + 4 does indeed equal 10.</p>
+    
+    <p>pic2 goes here</p>
+    
+    <h2>Assignment vs. Equality</h2>
+    
+    <p>Note the double-equals operator (==). In most programming languages, there is an important distinction between single-equals (=) and double-equals. In Python, single-equals stands for assignment, which we will see in the section on Variables. Double-equals is the equality operator, which is used to compare if the value on the left is equal to the value on the right.</p>
+    
+    <p>pic3 goes here</p>
+    
+    <p>In this particular case, we receive the error SyntaxError: can’t assign to operator. If we look up this error message, we will see that this results from trying to assign (=) a value to the math expression, which is not permitted.</p>
+    
+    <p>A Python error is composed of several parts. First is the stack trace, whose purpose is to identify exactly where in the code the problem occurred. Here, we see that the error occurred in File “python”, line 1, which isn’t very useful in a REPL. However, if you were writing your code in a separate file, the line number is invaluable in identifying where the error occurred.</p>
+    
+    <p>The next part is the error type and message. Here, SyntaxError means that the error is related to an invalid sequence of code. For more information, try googling “Python SyntaxError”.</p>
+    
+    <p>It is good to get into the practice of Googling any unfamiliar error message you might come across! While errors may be scary, think of them like the pain receptors in your body. Sure, life may be more pleasant if we felt no pain, but biologically, the purpose of pain is to warn us of issues we may otherwise be unaware of. Imagine programming where, if you made a mistake, the computer would simply return nothing, with no indication of where the problem occurred, or what the problem even is!</p>
+    
+    <h2>Strings</h2>
+    
+    <p>Let’s try printing the string “Hello” . Note that the REPL immediately return s the value you inputted to the screen.</p>
+    
+    <p>pic4 goes here</p>
+    
+    <p>Note that the output encloses the string with single quotes, even though your input used double quotes. Some languages distinguish between single and double quote encoded strings; Python is not one of them.</p>
+    
+    <h2>Variables</h2> 
+    
+    <p>Do note that placing quotes around your string is important. Let’s see what happens when we try inputting Hello:</p>
+    
+    <p>pic5 goes here</p>
+    
+    <p>The error message we get reads NameError: name ‘Hello’ is not defined. This stems from Python interpreting Hello not as the string ‘Hello’, but as the variable Hello. We have never assigned a value to Hello, and as such, Python doesn’t know how to return a value from “nothing,” and throws an error.</p>
+    
+    <p>If it’s been a while since algebra in school, a variable is an arbitrary symbol that represents a value. Remember back to math problems like below:</p>
+    
+    <pre>5x + 3y = 11 
+x - y = 15
+Solve for x and y.
+</pre>
+    
+    <p>A quick linear equation later, we get x = 7, y = -8. (Note that when doing math, = stands for equality, not assignment.) Here, the variable x holds the value 7, and the variable y holds the value -8. In a programming context, variables hold value in the same way. Any value -- not just numbers -- can be represented by variables. You can think of a variable as “a box in which a value is contained.”</p>
+    
+    <p>Variables are used for countless things: one common use cases is to represent a complex expression as a short, easily typable identifier.
+For example, by assigning my_address = “123 Programmer Drive, New Haven, CT 06510”, we can use the variable my_address every time we need access to the string representing the address. Another use case is to represent parameters a function accepts, which we’ll see more of in the section on functions. Earlier we talked about the difference between assignment (single-equals) and equality (double-equals). Assignment is the act of linking a value to a variable. In Python, we use = to assign a value to a variable. Let’s do that now:</p>
+    
+    <p>pic6 goes here</p>
+    
+    <p>See that like expressions, our variable Hello is evaluated to the string we assigned to it: ‘Hello, Python programmers!’</p>
+    
+    <p>Going back to the SyntaxError we recieved when trying to do 2 * 3 + 4 = 10, we can see why this statement doesn’t make sense in a programming context. The expression on the right evaluates to 10, so we are attempting to assign the value 10 to the value 10. Unlike variables, certain “basic” values (known as primitives in some programming languages) cannot have other values assigned to them: the values they hold are fixed. “a” = “b” makes as little sense, as does 1 = 2.</p>
+    
+    <h2>Simple Functions</h2>
+    
+    <p>At this point, we’re ready to start writing a simple Python function. In a mathematical context, a function is a statement that connects a set of inputs to a set of outputs. You may be familiar with the Pythagorean Theorem, a formula for calculating the length of the third side of a triangle, given the lengths of the other two sides:</p>
+    
+    <pre>length of side C = square root of the length of side A squared plus length of side B squared</pre>
+    
+    <p>Substituting in some mathematical notation, we can simplify this to:</p>
+    
+    
+    <pre>length of side C = (length of side A ** 2 + length of side B ** 2) ** .5</pre>
+    
+    <p>** stands for “to the power of”. Recall that the square root of a number is that number to the power of 0.5. You may have seen the symbol ^ being used instead; however, in Python and many other languages, this represents an entirely different operation. In a programming context, the concept of “length of side” is unnecessary for the computer to do a calculation. Let’s sub in a, b, and c for the sides (note the lack of quotation marks!):</p>
+    
+    <pre>c = (a**2 + b**2)**.5  Short and sweet.</pre>
+    
+    <p>The programming definition of a function is very similar to the mathematical definition: inputs are passed in, processed, and returned as outputs. Most languages have a particular syntax for defining functions, so lets look at how to define the Pythagorean theorem in Python.</p>
+    
+    
+    <p>pic7 goes here</p>
+    
+    <p>We have several things going on here. First, the keyword def is used to signify that a function definition is beginning. Next, pythagorean_theorem is the variable to which we are assigning our function (yes, variables can hold</p>
+    
+    
+    <p>functions as well!). We can call our function using this variable name. Finally, the values between the parentheses (a, b) represent the arguments that our function takes.</p>
+    
+    <p>Before moving on, note that the REPL automatically added indentation for us in the next line, and that no value was returned. The REPL is aware that we’re in the process of defining a function, so “halts” processing while it waits for the function definition to finish. Also, in Python, whitespace (space or tab characters) are syntactically important in determining where function declarations start and end, so watch out for that. If you are following along in a text editor or a tool that does not automatically indent for you, be careful!</p>
+    
+    <p>Let’s move on to defining the function body. We will use the formula we wrote out above:</p>
+    
+    <p>pic8 goes here</p>
+    
+    
+    <p>We use the exact definition we defined above, and press Enter twice to complete the function definition. Great! Let’s call this function now. In Python, we pass the inputs in parentheses, similarly to how the function was defined, but with values instead of placeholder variables:</p>
+    
+    <pre>pythagorean_theorem(3, 4)</pre>
+    
+    <p>Function arguments are processed by position, so looking back at our function declaration, 3 corresponds to a in the function, while 4 corresponds to b. We know that we expect the length of the third side to follow the formula, so we expect to get the square root of three squared (9) plus four squared (16), which is 5. Let’s test this out!</p>
+    
+    
+    
+    <p>pic9 goes here</p>
+    
+    
+    <p>We get... nothing? What went wrong?</p>
+    
+    
+    <p>It turns out we’re still missing the most important part of the function! You may have noticed that previously, every time I use the word “return”, I format it as code. This wasn’t just a stylistic choice or a red herring -- the return value of the function is the value the function evaluates to. Right now, our pythagorean_theorem function is taking two numbers, computing the value, and... doing nothing with it. The value is just thrown away.</p>
+    
+    <p>Let’s modify our function such that it actually returns the value it calculates. All we need to do is add return c as the last line. Then, let’s try our calculation again:</p>
+    
+    <p>pic10 goes here</p>
+    
+    
+    <p>Success!<br>Note that while it makes sense from the perspective of following the Pythagorean theorem to assign the value to c and return it, this intermediary step is actually unnecessary. You could just as well do:</p>
+    
+    
+    <pre>def pythagorean_theorem(a, b): 
+return (a**2 + b**2)**0.5
+</pre>
+    
+    <p>There is no limitation about return only accepting a variable -- you can return any statement that returns a value. However, oftentimes it makes sense to assign intermediary variables like c for purposes of clarity.</p>
+    
+    <p>In case you were wondering, yes, the REPL we are using right now is also a function! It is an endless loop that takes user input as the argument, and returns the evaluated value as the output. In a general sense, any operation a computer does is handled by a function or a series of functions.</p>
+    
+    <h2>Congratulations, you’ve just successfully written a Python function!</h2>
+    
+    <p>You might be thinking: “wow, I just spent an hour of my time learning to write a calculator that does a single thing that I learned how to do years ago. What a waste of time!” This is an entirely valid opinion to hold. However, the magic of programming is that programming is incremental: large programs are composed using smaller programs as building blocks.</p>
+    
+    <p>Think of it as Lego: today, you’ve created your very first Lego brick. Tomorrow, you can connect it with another Lego brick (say, a function that calculates the area of a sphere). The day after, you can add yet another brick. Eventually, you will end up with a “geometry calculator” collection of bricks, that knows how to process common geometry functions. When a certain computation is requested, the “geometry calculator” brick will call the appropriate function (or brick) that knows how to handle this calculation.</p>
+    
+    <p>This “geometry calculator” brick can itself be used as the building block for even larger programs. You may combine it with a “chemistry calculator” brick, and a “physics calculator” brick, and a “calculus calculator” brick </p>
+    
+    <p>to form a “scientific calculation” brick. Then, you can combine this with a “graphical user interface” brick to get a calculator you can run as a desktop application, not a command line program. Throw in some natural language programming bricks, network bricks, machine learning bricks, and you end up with Wolfram Alpha, an online calculator that is able to understand calculations structured as English:</p>
+    
+    <p>pic11 goes here</p>
+    
+    <p>No complex program has ever been written without utilizing smaller programs as building blocks. The function we wrote today, no matter how trivial it may seem, can thus be seen as the first stepping stone towards a larger, more useful program. </p>
+    
+    <p>The patience to start small is key to learning to program. There are many reasons one might want to learn to program. If in the course of learning, you encounter a problem that seems so foreign or unrelated to your initial goal, just remember: it’s just another stepping stone.</p>
+    
+    
+    
+    
+    
+    
+</body>
+</html>

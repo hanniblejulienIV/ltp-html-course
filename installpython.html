@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head><title>Installing Python</title></head>
+    <body>
+    
+    <h1>For this tutorial, you will need: </h1>
+        <ul>
+            <li>A Windows computer </li>
+            <li>Administrator access </li>
+            <li>Windows Vista or later</li>
+        </ul>
+    
+    
+        <h2>BEFORE YOU START</h2>
+        
+        <p>There are two steps you will need to complete to get up and running with Python on your Windows machine.</p>
+        <ol>
+            <li>Install the Python program on your computer.</li>
+            <li>Add your Python installation to the system path.</li>
+        </ol>
+        <p>The installation of Python is completed using the Python installer. However, depending on your configuration, you may need to add your Python installation to the system path manually after running the Python installer.</p>
+        
+        <h2>RUNNING THE PYTHON INSTALLER</h2>
+        
+        <p>1. To install the Python program on your computer, you can use the Python windows installer, available at https://www.python.org/. At the top of the screen, you should see several menu options. Go ahead and click Downloads:</p>
+        
+        <p>pic1 goes here</p>
+        
+        <p>The Python site should detect your system configuration automatically and display two options, one for Python 2, and another for Python 3. Note that these are the latest versions of Python, so the version numbers in the picture may be different than the version numbers used here.</p> 
+        
+        <p>2. Click the download button for Python 3. This will initiate the download.</p>
+        
+        <p>pic2</p>
+        
+        <p>3. Once the download is finished, a dialogue should come up asking if you want to run the installer. This may look different, depending on which browser and/or version of Windows you are using. When this dialogue comes up, select run. If the following dialogue doesn’t show up automatically, find the downloaded installer in your filesystem (this is usually in the ‘downloads’ folder) and double click it.</p>
+        
+        <p>pic3</p>
+        
+        <p>4. When you run the installer, a new dialogue will come up. Depending on your configuration, there may be a checkbox allowing you to add Python to your system path. If this checkbox is available, go ahead and check it. If this check box is not available, don’t worry. I will later cover how to add the Python installation to the system path manually.</p>
+        
+        <p>pic4</p>
+        
+        <p>5. Select custom installation.</p>
+        
+        <p>pic5</p>
+        
+        
+        <p>6. Click next until you arrive at a dialogue with a text field that says something like “customize install location”.</p>
+        
+        
+        <p>pic6</p>
+        
+        <p>7. For most applications, the installation location doesn’t matter. However, for Python you may need to reference the install location. Therefore, making the installation directory simple, easy to find and easy to remember can be very helpful. In the “customize install location” field, enter in <strong>‘C:/python3’</strong></p>
+        
+        <p>pic7</p>
+        
+        <p>This will specify the base directory of the windows filesystem as the install location for Python.</p>
+        
+        
+        <p>8. You should click install. You may need to click next one or more times, and you may need to enter your password or verify that you would like to make changes.</p>
+        
+        <p>pic8</p>
+        
+        <p>9. When the installation process is finished, you should see a window indicating that the installation was successful. At this point, Python should be installed on your computer. You can now close this window.</p>
+        
+        <p>pic9</p>
+        
+        
+        
+        <h2>CHECKING IF THE PYTHON INSTALLATION WAS ADDED TO THE SYSTEM PATH</h2>
+        
+        <p>1. Open the command prompt program on your computer. Command prompt is the windows command line interface which comes with every installation of Windows. If command prompt was previously open, close command prompt and open it again before continuing.</p>
+        
+        <p>pic1.1</p>
+        
+        <p>2. Type the word python into the command prompt and press enter. If your program was installed successfully and was added to the system path, you should see a new prompt with “>>” characters like this:</p>
+        
+        <p>pic2.1</p>
+        
+        <p>If your Python installation was not added to the system path, you should see a message which says that the python command is not recognized:</p>
+        
+        <p>pic3.1</p>
+        
+        <p>If you see a message indicating that the Python command is not recognized, follow the instructions to add the Python installation to the system path manually.</p>
+        
+        <h2>ADDING YOUR PYTHON INSTALLATION TO THE SYSTEM PATH MANUALLY</h2>
+        
+        <p>1. Open up the control panel on your computer. Click view by and select small or large icons. Select the system icon.</p>
+        
+        <p>pic1.2</p>
+        
+        <p>2. Select advanced system settings from the side panel.</p>
+        
+        <p>pic2.2</p>
+        
+        
+        <p>3. Select the advanced tab at the top of the window. Click the environment variables button at the bottom of the screen.</p>
+        
+        <p>pic3.2</p>
+        
+        
+        <p>4. In the environment variables section, select PATH and click <strong>edit.</strong></p>
+        
+        
+        <p>pic4.2</p>
+        
+        <p>5. Click <strong>new</strong>. In the new field that shows up, type the custom location that you set for your Python installation, which should be <strong>‘C:/python3’</strong>.</p>
+        
+        
+        <p>pic5.2</p>
+        
+        <p>6. Click OK. You have now added Python to the system path. You should then follow the previous instructions to verify that the Python installation is added to the path variable.</p>
+        
+        
+        
+        
+    </body>
+</html>

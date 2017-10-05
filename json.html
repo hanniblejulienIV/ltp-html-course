@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+<h1>First, what is JSON?</h1>
+    
+    <p>JSON is short for JavaScript Object Notation. It is designed to store and move data that’s sent between the server and the browser. One of the greatest things about JSON is that it is completely language independent. This means that it can be read by many programming languages and look familiar to all of them.</p>
+    
+    <h2>How does JSON look?</h2>
+    
+    <p>JSON data is received as an enormous concatenation of characters, also known as a “string”. Inside of this string, are tags as well as “key : value” pairs.</p>
+    
+    <p>jpic1</p>
+    
+    <ul>
+        <li>The string begins with a mustache bracket {and ends with another}.</li>
+        <li>Each key / value is separated by a colon :</li>
+        <li>The key : value pairs are separated by a comma ,</li>
+    </ul>
+    
+    
+    <p> As you can see, the first “key” is “breed” and the “value” it holds is “Schnauzer”. Imagine receiving a JSON string with all of the dogs currently in your city’s Humane Society? The string would be so massive, it would practically be unreadable and would quickly become confusing.<br> This is where “parsing” comes into play!</p>
+    
+    
+    <h1>The JSON.parse() Function</h1>
+    
+    
+    <h3>What is parsing?</h3>
+    
+    <p>The meaning of parsing is to analyze or examine a specific string. 
+JSON.parse() is defined in ECMA-262 5th Edition (the specification that JavaScript is based on). Its usage is simple: 
+It is a function that takes in a JSON string or a variable containing a JSON string and returns a Javascript object.</p>
+    
+    
+    <p>For example:</p>
+    <p>lpic2</p>
+    
+    <p>Notice that we declared the variable dog, initialized with the JSON.parse () function and passed in the string as the parameter. If we were to log the “dog” variable, we would get the final result as a Javascript object.</p>
+    
+    
+    <p>jpic3</p>
+    
+    
+    <p>The job of the parser is to take the JSON string and break it up into a Javascript Object(s). The object is now cleaner and much more readable. <br>Now that we have a Javascript object inside a variable, we can simply refer to the name of the property we need. For instance, to access information about the dog, use the Javascript “Object.property” rule.</p>
+    
+    
+    <p>jpic4</p>
+    
+    <p>In this case, “Object” is the variable containing the object and “property” is the key holding a certain value.</p>
+    
+    
+    <h2>Working with large amounts of JSON data</h2>
+    
+    <p>If you owned more than one dog, how would you separate each dog and send it as a JSON string? To do this, we enclose multiple objects in square brackets and separate them by a comma, also known as an array.</p>
+    
+    
+    <p>jpic5</p>
+    
+    <p>As mentioned before, after several dogs, this can become very confusing. Let’s parse the data and see what we get. However, this time we will pass in the variable instead of the JSON string inside the parse () function.</p>
+    
+    <p>jpic6</p>
+    
+    
+    <p>We can see that when we passed in the variable “dogs” to the JSON.parse() function, the result was an array with three objects. What if you would like to access each of the dog’s name? Hopefully you have some knowledge on how Javascript arrays work. However, to grab this information, we need to access the array index of the dog we wish to output.</p>
+    
+    
+    <p>jpic7</p>
+    
+    <p>The index of the first dog is 0, the second dog is 1 and the third dog is 2.</p>
+    
+    
+    
+    <h2>Nesting JSON data</h2>
+    
+    <p>Let’s say that you have an object which contains a certain number of keys and each key contains another object. It is an object inside of an object! It’s object-ception! This is called nesting objects. Let’s look at some nested objects in raw JSON form.</p>
+    
+    <p>jpic8</p>
+    
+    <p>This is even more confusing! <br><br>Let’s re-initialize the variable with the JSON.parse() function and pass in the JSON string. Afterwards, we will output the result and see what we get.</p>
+    
+    
+    <p>jpic9</p>
+    
+    
+    <p>We can see that the main object holds three keys, “Spot”, “Pooch”, and “Felix”. These dog names each hold their own object with their specific information. I think that accessing information in nested objects is a little easier to understand than with arrays.</p>
+    
+    <p>jpic10</p>
+    
+    <p>Instead of using the index, we simply use the Object.Object.property rule.</p>
+    
+    <h2>CONCLUSION</h2>
+    
+    <p>In this article, you were given a simple guide to using and reading JSON, including how to create and parse JSON, and how to access data inside it.</p>
+    
+    
+    
+    
+    
+    
+</body>
+
+</html>

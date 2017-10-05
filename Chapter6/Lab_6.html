@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab 6</title>  
+   <style>
+    
+       textarea {
+           width: 200px;
+           height: 10px;
+       }
+    
+       .perfect, input 
+       {
+           align-content: center;
+       }
+    </style> 
+   
+</head>
+<body>
+   <form action="#" method="post"> 
+    <label for="patientname">Patient Name</label>
+      <input type="text" id="patientname" name="patientname" required="required"/>
+    <label for="birthdate">Brith Date</label>
+      <input type="date" id="birthdate" required="required"/><br/>
+       
+    <label id="question1">Are You Under a physician's care now?</label>
+      <input type="radio" name="question1" value="yes">Yes
+      <input type="radio" name="question1" value="no">No
+      <label for="question1">&nbsp;&nbsp;If yes, please explain:</label>
+       <textarea id="question1"></textarea><br/>
+    <label id="question2">Have you ever been hospitalized or had a major operation?</label>
+      <input type="radio" name="question2" value="yes">Yes
+      <input type="radio" name="question2" value="no">No
+      <label for="question2">&nbsp;&nbsp;If yes, please explain:</label>
+       <textarea id="question2"></textarea><br/> 
+    <label id="question3">Have you ever had a serious head or neck injury?</label>
+      <input type="radio" name="question3" value="yes">Yes
+      <input type="radio" name="question3" value="no">No
+      <label for="question3">&nbsp;&nbsp;If yes, please explain:</label>
+       <textarea id="question3"></textarea><br/> 
+    <label id="question4">Have you ever been hospitalized or had a major operation?</label>
+      <input type="radio" name="question4" value="yes">Yes
+      <input type="radio" name="question4" value="no">No
+      <label for="question4">&nbsp;&nbsp;If yes, please explain:</label>
+       <textarea id="question4"></textarea><br/> 
+    <label id="question5">Have you ever been hospitalized or had a major operation?</label>
+      <input type="radio" name="question5" value="yes">Yes
+      <input type="radio" name="question5" value="no">No<br/>
+    <label id="question6">Have you ever been hospitalized or had a major operation?</label>
+      <input type="radio" name="question6" value="yes">Yes
+      <input type="radio" name="question6" value="no">No<br/>
+    <label id="question7">Have you ever been hospitalized or had a major operation?</label>
+      <input type="radio" name="question7" value="yes">Yes
+      <input type="radio" name="question7" value="no">No<br/>
+    <label id="question8">Have you ever been hospitalized or had a major operation?</label>
+      <input type="radio" name="question8" value="yes">Yes
+      <input type="radio" name="question8" value="no">No<br/>
+    <label id="question9">Have you ever been hospitalized or had a major operation?</label>
+      <input type="radio" name="question9" value="yes">Yes
+      <input type="radio" name="question9" value="no">No<br/>
+       
+       <fieldset>
+       <legend>Women: Are You</legend>
+       <label id="wques1">Pregnant/Trying to get pregnant?</label>
+      <input type="radio" name="wques1" value="yes">Yes
+      <input type="radio" name="wques1" value="no">No
+       <label id="wques2">&nbsp;&nbsp;&nbsp;&nbsp;Taking oral contraceptives?</label>
+      <input type="radio" name="wques2" value="yes">Yes
+      <input type="radio" name="wques2" value="no">No
+       <label id="wques3">&nbsp;&nbsp;&nbsp;&nbsp;Nursing?</label>
+      <input type="radio" name="wques3" value="yes">Yes
+      <input type="radio" name="wques3" value="no">No
+       </fieldset>
+       
+       <fieldset>
+       <legend>Are you allegeric to any of the following?</legend>
+       <label id="drug1"></label>
+      <input type="checkbox" name="drug1" value="aspirin">Aspirin
+      <label id="drug2"></label>
+      <input type="checkbox" name="drug2" value="penicillin">Penicillin
+      <label id="drug3"></label>
+      <input type="checkbox" name="drug3" value="codeine">Codeine
+           <label id="drug4"></label>
+      <input type="checkbox" name="drug4" value="local anesihetics">Local Anesthetics
+           <label id="drug5"></label>
+      <input type="checkbox" name="drug5" value="acrylic">Acrylic
+           <label id="drug6"></label>
+      <input type="checkbox" name="drug6" value="Metal">Metal
+           <label id="drug7"></label>
+      <input type="checkbox" name="drug7" value="latex">Latex
+           <label id="drug8"></label>
+      <input type="checkbox" name="drug8" value="sulfa drugs">Sulfa drugs<br/>
+           <label id="drug9"></label>
+      <input type="checkbox" name="drug9" value="other">Other 
+           <label id="drug10"></label>
+      <label for="drug10">&nbsp;&nbsp;&nbsp;&nbsp;If Other, please explain:</label>
+       <textarea id="drug10"></textarea>
+       </fieldset>
+       
+       
+       <fieldset>
+       <legend>Do you have, or have you had, any of the following?</legend>
+       <label id="ques1">AIDS/HIV Postive</label>
+      <input type="radio" name="ques1" value="yes">Yes
+      <input type="radio" name="ques1" value="no">No
+       <label id="ques2">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label>
+      <input type="radio" name="ques2" value="yes">Yes
+      <input type="radio" name="ques2" value="no">No
+       <label id="ques3">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label>
+      <input type="radio" name="ques3" value="yes">Yes
+      <input type="radio" name="ques3" value="no">No
+            <label id="ques4">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label>
+      <input type="radio" name="ques4" value="yes">Yes
+      <input type="radio" name="ques4" value="no">No<br/>
+       </fieldset>
+    </form>
+         
+          
+            <form action="1" method="post"> 
+            <fieldset>
+            <legend>Do you have, or have you had, any of the following?</legend>
+           <table>
+                <tr><td><label id="ques1">AIDS/HIV Postive</label></td><td><input type="radio" name="ques1" value="yes">Yes</td><td><input type="radio" name="ques1" value="no">No</td><td><label id="ques2">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques2" value="yes">Yes</td><td><input type="radio" name="ques2" value="no">No</td><td><label id="ques3">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques3" value="yes">Yes</td><td><input type="radio" name="ques3" value="no">No</td><td><label id="ques4">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques4" value="yes">Yes</td><td><input type="radio" name="ques4" value="no">No</td>
+               </tr> 
+               <tr><td><label id="ques5">AIDS/HIV Postive</label></td><td><input type="radio" name="ques5" value="yes">Yes</td><td><input type="radio" name="ques5" value="no">No</td><td><label id="ques6">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques6" value="yes">Yes</td><td><input type="radio" name="ques6" value="no">No</td><td><label id="ques7">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques7" value="yes">Yes</td><td><input type="radio" name="ques7" value="no">No</td><td><label id="ques8">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques8" value="yes">Yes</td><td><input type="radio" name="ques8" value="no">No</td>
+               </tr>
+               <tr><td><label id="ques9">AIDS/HIV Postive</label></td><td><input type="radio" name="ques9" value="yes">Yes</td><td><input type="radio" name="ques9" value="no">No</td><td><label id="ques10">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques10" value="yes">Yes</td><td><input type="radio" name="ques10" value="no">No</td><td><label id="ques11">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques11" value="yes">Yes</td><td><input type="radio" name="ques11" value="no">No</td><td><label id="ques12">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques12" value="yes">Yes</td><td><input type="radio" name="ques12" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques13">AIDS/HIV Postive</label></td><td><input type="radio" name="ques13" value="yes">Yes</td><td><input type="radio" name="ques13" value="no">No</td><td><label id="ques14">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques14" value="yes">Yes</td><td><input type="radio" name="ques14" value="no">No</td><td><label id="ques15">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques15" value="yes">Yes</td><td><input type="radio" name="ques15" value="no">No</td><td><label id="ques16">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques16" value="yes">Yes</td><td><input type="radio" name="ques16" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques17">AIDS/HIV Postive</label></td><td><input type="radio" name="ques17" value="yes">Yes</td><td><input type="radio" name="ques17" value="no">No</td><td><label id="ques18">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques18" value="yes">Yes</td><td><input type="radio" name="ques18" value="no">No</td><td><label id="ques19">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques19" value="yes">Yes</td><td><input type="radio" name="ques19" value="no">No</td><td><label id="ques20">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques20" value="yes">Yes</td><td><input type="radio" name="ques20" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques21">AIDS/HIV Postive</label></td><td><input type="radio" name="ques21" value="yes">Yes</td><td><input type="radio" name="ques21" value="no">No</td><td><label id="ques22">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques22" value="yes">Yes</td><td><input type="radio" name="ques22" value="no">No</td><td><label id="ques23">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques23" value="yes">Yes</td><td><input type="radio" name="ques23" value="no">No</td><td><label id="ques24">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques24" value="yes">Yes</td><td><input type="radio" name="ques24" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques25">AIDS/HIV Postive</label></td><td><input type="radio" name="ques25" value="yes">Yes</td><td><input type="radio" name="ques25" value="no">No</td><td><label id="ques26">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques26" value="yes">Yes</td><td><input type="radio" name="ques26" value="no">No</td><td><label id="ques27">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques27" value="yes">Yes</td><td><input type="radio" name="ques27" value="no">No</td><td><label id="ques28">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques28" value="yes">Yes</td><td><input type="radio" name="ques28" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques29">AIDS/HIV Postive</label></td><td><input type="radio" name="ques29" value="yes">Yes</td><td><input type="radio" name="ques29" value="no">No</td><td><label id="ques30">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques30" value="yes">Yes</td><td><input type="radio" name="ques30" value="no">No</td><td><label id="ques31">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques31" value="yes">Yes</td><td><input type="radio" name="ques31" value="no">No</td><td><label id="ques32">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques32" value="yes">Yes</td><td><input type="radio" name="ques32" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques33">AIDS/HIV Postive</label></td><td><input type="radio" name="ques33" value="yes">Yes</td><td><input type="radio" name="ques33" value="no">No</td><td><label id="ques34">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques34" value="yes">Yes</td><td><input type="radio" name="ques34" value="no">No</td><td><label id="ques35">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques35" value="yes">Yes</td><td><input type="radio" name="ques35" value="no">No</td><td><label id="ques36">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques36" value="yes">Yes</td><td><input type="radio" name="ques36" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques37">AIDS/HIV Postive</label></td><td><input type="radio" name="ques37" value="yes">Yes</td><td><input type="radio" name="ques37" value="no">No</td><td><label id="ques38">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques38" value="yes">Yes</td><td><input type="radio" name="ques38" value="no">No</td><td><label id="ques39">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques39" value="yes">Yes</td><td><input type="radio" name="ques39" value="no">No</td><td><label id="ques40">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques40" value="yes">Yes</td><td><input type="radio" name="ques40" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques41">AIDS/HIV Postive</label></td><td><input type="radio" name="ques41" value="yes">Yes</td><td><input type="radio" name="ques41" value="no">No</td><td><label id="ques42">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques42" value="yes">Yes</td><td><input type="radio" name="ques42" value="no">No</td><td><label id="ques43">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques43" value="yes">Yes</td><td><input type="radio" name="ques43" value="no">No</td><td><label id="ques44">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques44" value="yes">Yes</td><td><input type="radio" name="ques44" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques45">AIDS/HIV Postive</label></td><td><input type="radio" name="ques45" value="yes">Yes</td><td><input type="radio" name="ques45" value="no">No</td><td><label id="ques46">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques46" value="yes">Yes</td><td><input type="radio" name="ques46" value="no">No</td><td><label id="ques47">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques47" value="yes">Yes</td><td><input type="radio" name="ques47" value="no">No</td><td><label id="ques48">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques48" value="yes">Yes</td><td><input type="radio" name="ques48" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques49">AIDS/HIV Postive</label></td><td><input type="radio" name="ques49" value="yes">Yes</td><td><input type="radio" name="ques49" value="no">No</td><td><label id="ques50">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques50" value="yes">Yes</td><td><input type="radio" name="ques50" value="no">No</td><td><label id="ques51">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques51" value="yes">Yes</td><td><input type="radio" name="ques51" value="no">No</td><td><label id="ques52">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques52" value="yes">Yes</td><td><input type="radio" name="ques52" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques53">AIDS/HIV Postive</label></td><td><input type="radio" name="ques53" value="yes">Yes</td><td><input type="radio" name="ques53" value="no">No</td><td><label id="ques54">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques54" value="yes">Yes</td><td><input type="radio" name="ques54" value="no">No</td><td><label id="ques55">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques55" value="yes">Yes</td><td><input type="radio" name="ques55" value="no">No</td><td><label id="ques56">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques56" value="yes">Yes</td><td><input type="radio" name="ques56" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques57">AIDS/HIV Postive</label></td><td><input type="radio" name="ques57" value="yes">Yes</td><td><input type="radio" name="ques57" value="no">No</td><td><label id="ques58">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques58" value="yes">Yes</td><td><input type="radio" name="ques58" value="no">No</td><td><label id="ques59">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques59" value="yes">Yes</td><td><input type="radio" name="ques59" value="no">No</td><td><label id="ques60">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques60" value="yes">Yes</td><td><input type="radio" name="ques60" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques61">AIDS/HIV Postive</label></td><td><input type="radio" name="ques61" value="yes">Yes</td><td><input type="radio" name="ques61" value="no">No</td><td><label id="ques62">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques62" value="yes">Yes</td><td><input type="radio" name="ques62" value="no">No</td><td><label id="ques63">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques63" value="yes">Yes</td><td><input type="radio" name="ques63" value="no">No</td><td><label id="ques64">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques64" value="yes">Yes</td><td><input type="radio" name="ques64" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques65">AIDS/HIV Postive</label></td><td><input type="radio" name="ques65" value="yes">Yes</td><td><input type="radio" name="ques65" value="no">No</td><td><label id="ques66">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques66" value="yes">Yes</td><td><input type="radio" name="ques66" value="no">No</td><td><label id="ques67">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques67" value="yes">Yes</td><td><input type="radio" name="ques67" value="no">No</td><td><label id="ques68">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques68" value="yes">Yes</td><td><input type="radio" name="ques68" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques69">AIDS/HIV Postive</label></td><td><input type="radio" name="ques69" value="yes">Yes</td><td><input type="radio" name="ques69" value="no">No</td><td><label id="ques2">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques70" value="yes">Yes</td><td><input type="radio" name="ques70" value="no">No</td><td><label id="ques70">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques71" value="yes">Yes</td><td><input type="radio" name="ques71" value="no">No</td><td><label id="ques72">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques72" value="yes">Yes</td><td><input type="radio" name="ques72" value="no">No</td>
+               </tr>    
+               <tr><td><label id="ques73">AIDS/HIV Postive</label></td><td><input type="radio" name="ques73" value="yes">Yes</td><td><input type="radio" name="ques73" value="no">No</td><td><label id="ques74">&nbsp;&nbsp;&nbsp;&nbsp;Cortisone Medicine</label></td><td><input type="radio" name="ques74" value="yes">Yes</td><td><input type="radio" name="ques74" value="no">No</td><td><label id="ques75">&nbsp;&nbsp;&nbsp;&nbsp;Hemophillia</label></td><td><input type="radio" name="ques75" value="yes">Yes</td><td><input type="radio" name="ques75" value="no">No</td><td><label id="ques76">&nbsp;&nbsp;&nbsp;&nbsp;Radiation Treatments</label></td><td><input type="radio" name="ques76" value="yes">Yes</td><td><input type="radio" name="ques76" value="no">No</td>
+               </tr>  
+               <tr><td><label id="ques77">Have you ever had any serious illness not listed above?</label></td><td><input type="radio" name="ques77" value="yes">Yes</td><td><input type="radio" name="ques77" value="no">No</td><td><label for="ques77">&nbsp;&nbsp;&nbsp;&nbsp;If no, please write down illness</label>
+       <textarea id="ques100"></textarea></td></tr>      
+           </table>
+           </fieldset>
+    </form>
+            
+                
+    
+    <form action="#" method="post">
+    
+    <label for="quesq1">&nbsp;&nbsp;Comments:</label>
+       <textarea id="quesq1"></textarea>  
+        
+    </form>
+           
+    
+    <p>To the best of my knowledge, the questions on this form have been accurately answered. I understand that providing incorrect information can be dangerous to my (or patient's) health. It is my responsibility to inform the dental office of any changes in medical status.</p>
+    
+           
+           <form action="#" method="post">      
+      <label for="quesq2">&nbsp;&nbsp;SIGNATURE OF PATIENT, PARENT, or GUARDIAN</label>
+       <textarea id="quesq2"></textarea><label for="quesq2">DATE</label><textarea id="quesq2"></textarea> 
+        
+    </form>
+           
+  
+</body>
+</html>
